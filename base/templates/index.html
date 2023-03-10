@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="static/nerd.png">
+        <meta charset="utf-8" />
+        <title>Araply</title>
+    </head>
+    <body bgcolor="black" text="white" >
+        <style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    </style>
+      <div>
+        <h1 align="center">Twitter for Araply</h1>
+        <img src="static/images/blue.png" style="width:60px;height:60px;" alt="logo" />
+        <hr>
+      </div>
+        
+        
+    <div class="home-container">
+        <div style="float:left;">
+            <div>
+                <h3>Do you want to tweet?</h3>
+                <form method="POST" action="{% url 'index' %}" >
+                    {% csrf_token %}
+                    <div >
+                        <label>Enter Tweet</label>
+                        <input type="text"  name="MyTweet" style="width: 300px; height: 200px;"/> 
+                        <button  type="submit" value="Submit">Submit</button>
+                    </div>
+                </form> 
+            </div>
+            <div>
+                <a href="{% url 'trends' %}"><h4>TRENDS</h4></a>
+            
+            </div>
+        </div>
+        <div style="float:center;">
+            <h2 align="center">Home timeline</h2>
+            <ul>
+                {% for tweet in tweets %}
+                    <li>{{ tweet }}</li>
+                {% endfor %}
+             </ul>
+
+        </div>
+        <div style="float:right;">
+            <div>
+                <h5>Messages</h5>
+            </div>
+            <div>
+                <h5>Notifications</h5>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <hr>
+        <div>
+        <p>Hope you love this.</p>
+        </div>
+            <p align="right"> Powered by a®ap liMo</p>
+            <p align="right"> © Araply™</p>
+    </footer>
+        
+    </body>
+</html>

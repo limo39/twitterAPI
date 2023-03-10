@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Lord Limo</title>
+    </head>
+    <body bgcolor="black" text="white" >
+        <style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    </style>
+        <h1 align="center">Twitter for Araply</h1>
+        <hr>
+        
+        
+    <div class="home-container">
+        <div style="float:left;">
+            <div>
+                <h3>Do you want to tweet?</h3>
+                <form method="POST" action="{% url 'index' %}" >
+                    <div >
+                        <label>Enter a Topic</label>
+                        <input type="text"  name="MyTweet" /> 
+                        <button  type="submit" value="Submit">Submit</button>
+                    </div>
+                </form> 
+            <div>
+                <a href="{% url 'trend' %}"><h4>TRENDS</h4></a>
+            
+            </div>
+        </div>
+        <div style="float:center;">
+            <h2 align="center">Home timeline</h2>
+           <!--  {% csrf_token %} 
+            {%for tweet in timeline:
+                 print(f"{tweet.user.name} said {tweet.text}")%} -->
+        </div>
+        <div style="float:right;">
+            <div>
+                <h5>Messages</h5>
+            </div>
+            <div>
+                <h5>Notifications</h5>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div>
+        <p>Hope you love this.</p>
+        </div>
+            <p align="right"> Powered by a®ap liMo</p>
+            <p align="right"> © Araply™</p>
+    </footer>
+        
+    </body>
+</html>
+ -->

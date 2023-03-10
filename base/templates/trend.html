@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trending Topics</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "{% url 'get_trends' %}",
+                success: function(response) {
+                    var trend_list = "";
+                    for (var i = 0; i < response.length; i++) {
+                        trend_list += "<li>" + response[i] + "</li>";
+                    }
+                    $("#trend-list").html(trend_list);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Trending Topics in New York:</h1>
+    <ul id="trend-list"></ul>
+</body>
+</html>
